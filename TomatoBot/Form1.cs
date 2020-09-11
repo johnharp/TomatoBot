@@ -147,10 +147,10 @@ namespace TomatoBot
             switch (_currentState)
             {
                 case PomodoroState.Idle:
-                    text = "Pomodoro Automator [Idle]";
+                    text = "TomatoBot [Idle]";
                     break;
                 case PomodoroState.Working:
-                    text = "Pomodoro Automator [" + _minutesRemaining.ToString() + "]";
+                    text = "TomatoBot [" + _minutesRemaining.ToString() + "]";
                     break;
             }
 
