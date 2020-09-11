@@ -31,6 +31,8 @@
             this.StartStopButton = new System.Windows.Forms.Button();
             this.sendSerialCommandCheckbox = new System.Windows.Forms.CheckBox();
             this.setChatStatusCheckbox = new System.Windows.Forms.CheckBox();
+            this.ResetButton = new System.Windows.Forms.Button();
+            this.currentStateLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // StartStopButton
@@ -41,6 +43,7 @@
             this.StartStopButton.TabIndex = 0;
             this.StartStopButton.Text = "Start/Stop";
             this.StartStopButton.UseVisualStyleBackColor = true;
+            this.StartStopButton.Click += new System.EventHandler(this.StartStopButton_Click);
             // 
             // sendSerialCommandCheckbox
             // 
@@ -66,11 +69,31 @@
             this.setChatStatusCheckbox.Text = "Update Microsoft Teams Status";
             this.setChatStatusCheckbox.UseVisualStyleBackColor = true;
             // 
+            // ResetButton
+            // 
+            this.ResetButton.Location = new System.Drawing.Point(95, 126);
+            this.ResetButton.Name = "ResetButton";
+            this.ResetButton.Size = new System.Drawing.Size(75, 23);
+            this.ResetButton.TabIndex = 3;
+            this.ResetButton.Text = "Reset";
+            this.ResetButton.UseVisualStyleBackColor = true;
+            this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
+            // 
+            // currentStateLabel
+            // 
+            this.currentStateLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.currentStateLabel.Location = new System.Drawing.Point(13, 13);
+            this.currentStateLabel.Name = "currentStateLabel";
+            this.currentStateLabel.Size = new System.Drawing.Size(250, 26);
+            this.currentStateLabel.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 161);
+            this.Controls.Add(this.currentStateLabel);
+            this.Controls.Add(this.ResetButton);
             this.Controls.Add(this.setChatStatusCheckbox);
             this.Controls.Add(this.sendSerialCommandCheckbox);
             this.Controls.Add(this.StartStopButton);
@@ -86,6 +109,8 @@
         private System.Windows.Forms.Button StartStopButton;
         private System.Windows.Forms.CheckBox sendSerialCommandCheckbox;
         private System.Windows.Forms.CheckBox setChatStatusCheckbox;
+        private System.Windows.Forms.Button ResetButton;
+        private System.Windows.Forms.Label currentStateLabel;
     }
 }
 
