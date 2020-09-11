@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.StartStopButton = new System.Windows.Forms.Button();
             this.sendSerialCommandCheckbox = new System.Windows.Forms.CheckBox();
             this.setChatStatusCheckbox = new System.Windows.Forms.CheckBox();
             this.ResetButton = new System.Windows.Forms.Button();
             this.currentStateLabel = new System.Windows.Forms.Label();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // StartStopButton
@@ -87,6 +90,13 @@
             this.currentStateLabel.Size = new System.Drawing.Size(250, 26);
             this.currentStateLabel.TabIndex = 4;
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "TomatoBot";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -97,8 +107,10 @@
             this.Controls.Add(this.setChatStatusCheckbox);
             this.Controls.Add(this.sendSerialCommandCheckbox);
             this.Controls.Add(this.StartStopButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "TomatoBot";
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,6 +123,7 @@
         private System.Windows.Forms.CheckBox setChatStatusCheckbox;
         private System.Windows.Forms.Button ResetButton;
         private System.Windows.Forms.Label currentStateLabel;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 

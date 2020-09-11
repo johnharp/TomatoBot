@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
+
 namespace TomatoBot
 {
     public partial class Form1 : Form
@@ -174,5 +177,25 @@ namespace TomatoBot
 
 
         }
+
+        #region Minimize, Restore --------------------------------------------
+        // Info on making .Net windows forms app minimize to the system tray:
+        // http://www.developer.com/net/csharp/article.php/3336751
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            if (FormWindowState.Minimized == WindowState)
+            {
+                Hide();
+            }
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
+        }
+
+        #endregion
+
     }
 }
