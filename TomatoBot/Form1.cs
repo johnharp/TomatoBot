@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 
 
+
 namespace TomatoBot
 {
     public partial class Form1 : Form
@@ -66,6 +67,21 @@ namespace TomatoBot
             _minutesRemaining = POMODORO_MINUTES;
             SetWorkingState(PomodoroState.Idle);
 
+            MovablePython.Hotkey hk = new MovablePython.Hotkey();
+            hk.KeyCode = Keys.Space;
+            hk.Control = true;
+            hk.Alt = true;
+            hk.Pressed += new HandledEventHandler(ToggleWorkingStateHotKeyPressedHandler);
+            if (hk.GetCanRegister(this))
+            {
+                hk.Register(this);
+            }
+
+        }
+
+        private void ToggleWorkingStateHotKeyPressedHandler(object sender, HandledEventArgs e)
+        {
+            this.ToggleWorkingState();
         }
 
         private void SetupTimer()
