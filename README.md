@@ -1,2 +1,4 @@
 # TomatoBot
-A little desktop utility combining a pomodoro-method timer and some automation tasks.
+A desktop utility with a pomodoro timer and some automation tasks.
+
+https://en.wikipedia.org/wiki/Pomodoro_Technique
